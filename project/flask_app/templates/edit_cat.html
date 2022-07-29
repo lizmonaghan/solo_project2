@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="nav">
+        <h1 class="text-primary">Welcome {{ users.first_name }}</h1>
+        <a href="/cats" class="text-nav">Dashboard</a>
+        <a href="/logout" class="text-nav">Logout</a>
+    </nav>
+    <div class="container">
+        <form action="/update/cat" method="post" class="table">
+            <div>
+                {% with messages = get_flashed_messages(category_filter=['cat']) %}
+                    {% if messages %}
+                    <div>
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <input type="hidden" name="id" value={{edit.id}}>
+            <div>
+                <div class="new">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="new">
+                    <label for="age">Age:</label>
+                    <input type="number" name="age">
+                </div>
+                <div class="new">
+                    <label for="descr">Description:</label>
+                    <textarea name="descr" cols="25" rows="10"></textarea>
+                </div>
+                <div class="new">
+                    <label for="color">Coat color:</label>
+                    <input type="text" name="color">
+                </div>
+                <input type="submit" value="Edit Cat" class="add-btn">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

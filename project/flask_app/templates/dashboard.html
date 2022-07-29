@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="nav">
+        <h1 class="text-primary">Welcome {{ users.first_name }}</h1>
+        <a class="text-nav" href="/new/cat">Add Cat</a>
+        <a href="/logout" class="text-nav">Logout</a>
+    </nav>
+    <div class="headder">
+        <h1>Cats</h1>
+    </div>
+    <div class="container">
+        <table class="table">
+            <tbody>
+                {% for cat in cats %}
+                    <tr>
+                        <td>Name: {{  cat.name  }}</td>
+                    </tr>
+                    <tr>
+                        <td>Age: {{  cat.age  }}</td>
+                    </tr>
+                    <tr>
+                        <td>Description: {{  cat.description  }}</td>
+                    </tr>
+                    <tr>
+                        <td>Coat Color: {{  cat.color  }}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/cat/{{cat.id}}">View</a>
+                            {% if cat.user_id == session.user_id %}
+                            <a href="/edit/cat/{{cat.id}}">Edit</a>
+                            <a href="/delete/cat/{{cat.id}}">Delete</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

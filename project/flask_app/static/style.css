@@ -1,0 +1,99 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0px auto;
+}  
+
+.container{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 100px;
+}
+
+.text-primary{
+    font-size:50px;
+    color: rgb(120, 0, 233);
+    width: fit-content;
+    height: fit-content;
+    margin: 0px auto;
+}
+
+.form-group{
+    width:fit-content;
+    height: fit-content;
+    margin: 0px;
+}
+
+.form-name{
+    width:fit-content;
+    height: fit-content;
+    margin:0px auto;
+}
+
+.form-control{
+    margin: 10px;
+}
+
+.login, .register{
+    border: 3px outset;
+    background-color: beige;
+    border-radius: 10px;
+    width: 315px;
+    padding:10px;
+}
+
+.btn{
+    background-color: rgb(120, 0, 233);
+    color: beige;
+}
+
+.welcome{
+    font-size: 50px;
+    color: rgb(120, 0, 233);
+}
+
+.nav{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: beige;
+}
+
+.text-nav{
+    margin: 10px;
+}
+
+.top-text{
+    font-size: 40px;
+    margin: 0px auto;
+}
+
+.headder{
+    display:flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.table{
+    font-size: 20px;
+    margin: 20px;
+    border: 3px solid rgb(120, 0, 233);
+    background-color: beige;
+    height: 500px;
+    width: 600px;
+}
+
+.new{
+    margin: 20px;
+}
+
+.container{
+    display:flex;
+    justify-content: center;
+}
+
+.add-btn{
+    background-color: rgb(120, 0, 233);
+    color: beige;
+    margin: 30px;
+}

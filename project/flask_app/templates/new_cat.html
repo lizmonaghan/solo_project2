@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="nav">
+        <h1 class="text-primary">Welcome {{ users.first_name }}</h1>
+        <a href="/cats" class="text-nav">Dashboard</a>
+        <a href="/logout" class="text-nav">Logout</a>
+    </nav>
+    <div class="container">
+    <form action="/create/cat" method="post" class="table">
+        <div class="headder">
+            <h1>Cats</h1>
+        </div>
+        <div class="new">
+            <label for="name">Name:</label>
+            <input type="text" name="name">
+        </div>
+        <div class="new">
+            <label for="age">Age:</label>
+            <input type="number" name="age">
+        </div>
+        <div class="new">
+            <label for="descr">Description:</label>
+            <textarea name="descr" cols="25" rows="10"></textarea>
+        </div>
+        <div class="new">
+            <label for="color">Coat color:</label>
+            <input type="text" name="color">
+        </div>
+        <input type="submit" value="Add cat" class="add-btn">
+    </form>
+    </div>
+</body>
+</html>
